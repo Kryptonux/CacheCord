@@ -1,4 +1,4 @@
-name: Go Build Test
+name: Go
 
 on:
   push:
@@ -11,15 +11,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
     - name: Set up Go
-      uses: actions/setup-go@v4
+      uses: actions/setup-go@v2
       with:
         go-version: '1.20'
 
     - name: Build
-      run: go build -v ./src/...
+      run: go build -v github.com/Kryptonux/CacheCord/src/...
 
     - name: Test
-      run: go test -v ./src/...
+      run: go test -v github.com/Kryptonux/CacheCord/src/...
